@@ -20,11 +20,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
   });
 
-  app.get("/api/friends", function(req, res) {
-    // res.json(friends);
-  });
-
-  // If no matching route is found default to home
+  // This is the default page that they will go to if they don't type in a URL path
   app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });

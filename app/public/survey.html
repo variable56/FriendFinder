@@ -1,12 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1>This is the Survey Page!!!</h1>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary mb-5">
+        <div class="position-sticky">
+            <a class="navbar-brand" href="#">Friend Finder</a>
+        </div>
+    </nav>
+    <div class="container">
+
+
+        <h2><strong>User Information</strong></h2>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="fullName" placeholder="What is your Full Name?" aria-label="fullName"
+                aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-5">
+            <input type="text" class="form-control" id="imageURL" placeholder="Place the URL for your image here"
+                aria-label="photoUrl" aria-describedby="basic-addon1">
+        </div>
+
+        <!-- These are the questions for the user to answer to add themselves in the database and check their responses against other friends -->
+        <h3><strong>Question 1:</strong></h3>
+        <h4>You are very social at parties</h4>
+        <select name="q1" id="q1">
+            <option value=""></option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Somewhat Disagree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat Agree</option>
+            <option value="5">Strongly Agree</option>
+        </select>
+
+        <h3><strong>Question 2:</strong></h3>
+        <h4>You find it easy to make friends</h4>
+        <select name="q2" id="q2">
+            <option value=""></option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Somewhat Disagree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat Agree</option>
+            <option value="5">Strongly Agree</option>
+        </select>
+
+        <h3><strong>Question 3:</strong></h3>
+        <h4>You like to be the one talking</h4>
+        <select name="q3" id="q3">
+            <option value=""></option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Somewhat Disagree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat Agree</option>
+            <option value="5">Strongly Agree</option>
+        </select>
+
+        <h3><strong>Question 4:</strong></h3>
+        <h4>An ideal night for you is sitting at home playing tetris with your parents</h4>
+        <select name="q4" id="q4">
+            <option value=""></option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Somewhat Disagree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat Agree</option>
+            <option value="5">Strongly Agree</option>
+        </select>
+
+        <h3><strong>Question 5:</strong></h3>
+        <h4>Skydiving has always been on your bucket list</h4>
+        <select name="q5" id="q5">
+            <option value=""></option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Somewhat Disagree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat Agree</option>
+            <option value="5">Strongly Agree</option>
+        </select>
+
+        <h3><strong>Question 6:</strong></h3>
+        <h4>You have no problem speaking in front of crowds</h4>
+        <select name="q6" id="q6">
+            <option value=""></option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Somewhat Disagree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat Agree</option>
+            <option value="5">Strongly Agree</option>
+        </select>
+
+        <h3><strong>Question 7:</strong></h3>
+        <h4>Crowded spaces do not bother you</h4>
+        <select name="q7" id="q7">
+            <option value=""></option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Somewhat Disagree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat Agree</option>
+            <option value="5">Strongly Agree</option>
+        </select>
+
+        <h3><strong>Question 8:</strong></h3>
+        <h4>You were in the dungeons & dragons club in your high school</h4>
+        <select name="q8" id="q8">
+            <option value=""></option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Somewhat Disagree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat Agree</option>
+            <option value="5">Strongly Agree</option>
+        </select>
+
+        <h3><strong>Question 9:</strong></h3>
+        <h4>You know where Mordor is</h4>
+        <select name="q9" id="q9">
+            <option value=""></option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Somewhat Disagree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat Agree</option>
+            <option value="5">Strongly Agree</option>
+        </select>
+
+        <h3><strong>Question 10:</strong></h3>
+        <h4>You know what Warhammer is and have gone to a store to play it with other likeminded... folks</h4>
+        <select name="q10" id="q10">
+            <option value=""></option>
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Somewhat Disagree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Somewhat Agree</option>
+            <option value="5">Strongly Agree</option>
+        </select>
+        <button type="button" name="submitbutton" id="submitButton" class="btn btn-primary" btn-lg btn-block">Submit!</button>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script type="">
+        $("#submitButton").on("click",function(event) {
+        event.preventDefault();
+        
+        //creates a new user object and stores the users responses after they hit the submit button
+        var newUser = {
+        friendName: $("#fullName").val().trim(),
+        friendPic: $("#imageURL").val().trim(),
+        friendScores: [
+        parseInt($("#q1").val().trim()),
+        parseInt($("#q2").val().trim()),
+        parseInt($("#q3").val().trim()),
+        parseInt($("#q4").val().trim()),
+        parseInt($("#q5").val().trim()),
+        parseInt($("#q6").val().trim()),
+        parseInt($("#q7").val().trim()),
+        parseInt($("#q8").val().trim()),
+        parseInt($("#q9").val().trim()),
+        parseInt($("#q10").val().trim())]
+        };
+
+        console.log(newUser);
+        $.post("../api/friends", newUser, function(data){
+            if (data) {
+                console.log("new user succesfully added")
+            }
+            else {
+                console.log("something is up")
+            }
+        });
+    })
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
