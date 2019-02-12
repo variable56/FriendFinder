@@ -6,7 +6,8 @@ module.exports = function (app) {
 
     //This is the route for printing the entire JSON object to the screen within the browser
     app.get("/api/friends", function (req, res) {
-        res.json(friendObject)
+        res.json(friendObject);
+        // friendObject.push({name: "test", photo: "www.google.com", scores: [1,2,3,4,5,6,7,8,9,10]});
     });
 
 
@@ -23,7 +24,7 @@ module.exports = function (app) {
 
         //variables for the user response and the match response from friends.js
         var userResponse = req.body;
-        var userScore = userResponse.friendScores;
+        var userScore = userResponse.scores;
 
         // console.log(userScore);
 
@@ -31,22 +32,25 @@ module.exports = function (app) {
         var comparison = 0;
 
         for (i = 0; i < friendObject.length; i++) {
+            
             console.log(friendObject[i]);
             comparison = 0;
 
+
+
             //Another loop is necessary to loop through the scores and add them up
             for (j = 0; j < friendObject[i].scores[j]; j++) {
-                comparison += Math.abs(parseInt(userScore[j]) - parseInt(friendObject[i].scores[j]));
-
-                if (comparison <= match.difference) {
-                    match.name = friendObject[i].name;
-                    match.picture = friendObject[i].photo;
-                    match.difference = comparison;
-                };
+                comparison += Math.abs(parseInt(userScore[j]) - parseInt(friendObject[i].scores[j]));   
             }
+            if (comparison <= match.difference) {
+                match.name = friendObject[i].name;
+                match.picture = friendObject[i].photo;
+                match.difference = comparison;
+            };
         }
         //after looping through the JSON object for friends and the loop within it to add up the user score, we then push to the friends.js JSON object
         friendObject.push(req.body);
+        
 
         //returns JSON object to the html.
         res.json(match);

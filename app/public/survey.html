@@ -150,17 +150,38 @@
 
 
 
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Optional JavaScript -->
     <script type="">
         $("#submitButton").on("click",function(event) {
-        event.preventDefault();
         
+        $("#modal").modal("toggle");
+        event.preventDefault();
+        // friendObject.push({name: "test", photo: "www.google.com", scores: [1,2,3,4,5,6,7,8,9,10]});
         //creates a new user object and stores the users responses after they hit the submit button
         var newUser = {
-        friendName: $("#fullName").val().trim(),
-        friendPic: $("#imageURL").val().trim(),
-        friendScores: [
+        name: $("#fullName").val().trim(),
+        photo: $("#imageURL").val().trim(),
+        scores: [
         parseInt($("#q1").val().trim()),
         parseInt($("#q2").val().trim()),
         parseInt($("#q3").val().trim()),
@@ -174,14 +195,21 @@
         };
 
         console.log(newUser);
-        $.post("../api/friends", newUser, function(data){
+
+        var currentUrl = window.location.origin;
+
+        $.post(currentUrl + "/api/friends", newUser, function(data){
             if (data) {
+                
                 console.log("new user succesfully added")
             }
             else {
                 console.log("something is up")
             }
         });
+        
+        
+
     })
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -194,3 +222,10 @@
 </body>
 
 </html>
+
+
+<!-- Questions for Aaron: -->
+<!-- How do i get the values of my button values to log as numbers not strings -->
+<!-- cant get the req.body to push to the friends.js -->
+<!-- can't get how the match shows to the DOM -->
+<!-- resources for understanding why all these files work together, reused alot of code -->
